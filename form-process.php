@@ -1,4 +1,8 @@
 <?php
+
+$email_to = "johnleonard121@gmail.com"; // replace with your email address
+$email_subject = "New Form Submission"; // replace with your desired email subject
+
 // Validate and sanitize input
 if (!isset($_POST['name']) || !isset($_POST['email']) || !isset($_POST['message'])) {
     die('Please fill out all fields.');
