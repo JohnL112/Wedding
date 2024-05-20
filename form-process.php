@@ -1,5 +1,4 @@
 <?php
-
 $email_to = "johnleonard121@gmail.com"; // replace with your email address
 $email_subject = "New Form Submission"; // replace with your desired email subject
 
@@ -38,9 +37,7 @@ $headers = 'From: ' . $email . "\r\n" .
            'Reply-To: ' . $email . "\r\n" .
            'X-Mailer: PHP/' . phpversion();
 
-$mail_sent = mail($email_to, $email_subject, $email_message, $headers);
-
-if ($mail_sent) {
+if(mail($email_to, $email_subject, $email_message, $headers)) {
     echo 'Thanks for contacting us, we will get back to you as soon as possible.';
 } else {
     echo 'There was a problem sending the email.';
