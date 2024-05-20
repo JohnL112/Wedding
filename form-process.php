@@ -38,7 +38,11 @@ $headers = 'From: ' . $email . "\r\n" .
            'Reply-To: ' . $email . "\r\n" .
            'X-Mailer: PHP/' . phpversion();
 
-@mail($email_to, $email_subject, $email_message, $headers);
-?>
+$mail_sent = mail($email_to, $email_subject, $email_message, $headers);
 
-Thanks for contacting us, we will get back to you as soon as possible.
+if ($mail_sent) {
+    echo 'Thanks for contacting us, we will get back to you as soon as possible.';
+} else {
+    echo 'There was a problem sending the email.';
+}
+?>
